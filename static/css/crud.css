@@ -1,0 +1,132 @@
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+	background:#ffffff;
+	font:600 16px/18px 'Open Sans',sans-serif;
+}
+table{
+    margin: auto;
+}
+
+.border-th{
+    border: solid black 3px;
+}
+
+.border-tr{
+    background-color: rgb(232, 232, 232);
+    border-left: 2px solid #000;;
+    border-right: 2px solid #000;;
+    border-bottom: 2px solid #000;;
+}
+
+.eliminar-boton{
+    font-weight: bolder;
+    color: red;
+    font-size: 18px;
+    background-color: white;
+    border: none;
+}
+.editar-boton{
+    font-weight: bolder;
+    font-size: 24px;
+    color: yellow;
+    background-color: white;
+    border: none;
+}
+
+.fa{
+    cursor: pointer;
+    width: 70px;
+    height: 43px;
+    color: #181347;
+    text-align: center;
+    font-size: 1.3em;
+    transition: all 1s;
+    background-color: rgb(246, 243, 243);
+    border: 2px solid #000;;
+}
+.eliminar{
+    color: rgb(238, 91, 91);
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+.editar{
+    color: rgb(220, 228, 11);
+    font-size: 24px;
+    padding-top: 15px;
+    padding-bottom: 40px;
+}
+.titulo-tabla{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    font-weight: bolder;
+}
+.w3-closebtn{
+    align-self: flex-end;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+    right: 0;
+}
+.w3-container{
+    display: flex;
+    flex-direction: column;
+}
+.eliminar-msg{
+    text-align: center;
+    font-size: 24px;
+}
+.button-container{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+}
+.button-style{
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    border: 1px solid transparent;
+    letter-spacing: 2px;
+    min-width: 120px;
+    text-transform: uppercase;
+    white-space: normal;
+    font-weight: 700;
+    text-align: center;
+    padding: 17px 48px;
+    color: #fff;
+    background-color: #1ED760;
+    height: 48px;
+}
+.rojo{
+    background-color: rgb(224, 60, 60);
+    margin-left: 15px;
+    margin-bottom: 50px;
+}
+.w3-modal-content{
+    border-radius: 20px;
+    
+}
+.edit{
+    width: 30%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.nuevo{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-artist{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}

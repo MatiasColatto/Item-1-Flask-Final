@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/crud.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title>Crud</title>
+</head>
+<body>
+    <div class="nuevo">
+        <button class="button-style nuevo" onclick="document.getElementById('id03').style.display='block'">Nuevo artista</button>
+    </div>
+    <div class="titulo-tabla">Tabla de artistas</div>
+    <table>
+        <th class="border-th">Artist</th>
+        <th class="border-th">Eliminar</th>
+        <th class="border-th">Editar</th>
+    {% for i in myList %}
+            <tr></tr>
+            <th class="border-tr">{{i}} </th>
+            <th>
+                <i class="fa fa-times eliminar" onclick="document.getElementById('id01').style.display='block'" ></i>
+            </th>
+            <th>
+                <i class="fa fa-edit editar" onclick="document.getElementById('id02').style.display='block'"></i>
+            </th>
+            {% endfor %}
+    </section>
+</table>
+
+<div id="id01" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">&times;</span>
+     <form action="/crud" method="delete">
+      <input name="artistadelete" class="w3-input w3-border w3-margin-bottom input-artist" id="artistiddelete" required type="text" class="input" placeholder="Ingrese un artista a borrar">
+      <input type="submit" class="button-style"></input>
+    </form>
+    </div>
+  </div>
+</div>
+<div id="id02" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id02').style.display='none'" class="w3-closebtn">&times;</span>
+        <label><b>Nombre del artista</b></label>
+        <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Ingrese un nuevo nombre">
+        <button class="button-style edit">Editar</button>
+        </div>
+      </div>
+    </div>
+<div id="id03" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id03').style.display='none'" class="w3-closebtn">&times;</span>
+        <label><b>Nombre del artista</b></label>
+        <form class="form-artist" action="/crud" method="post">
+            <input name="artistaname" class="w3-input w3-border w3-margin-bottom input-artist" id="artistid" required type="text" class="input" placeholder="Ingrese un nuevo artista">
+            <input type="submit" class="button-style"></input>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>

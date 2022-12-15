@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <title>Search</title>
+</head>
+<body>
+    <form action="/search" method="post">
+        <input type="search" name="filtering" required>
+        <i class="fa fa-search"></i>
+    </form>
+    
+    <section>
+        <div class="top-div" onclick="location.href='crud';" >Crud de artistas</div>
+        <div class="container">
+            {% if filteredData %}
+                {% for i in filteredData %}
+                <div class="column">
+                    <h1>Song: {{i['track']}}</h1>
+                    <p>By: {{i['artist']}}</p>
+                    <p>Album: {{i['album']}}</p>
+                </div>
+                {% endfor %}
+            {% elif vacio %}
+            <div class="empty-finder">
+                <div class="empty-msg">No hay resultados coincidentes :( </div>
+                <div class="boton-inicio" onClick="window.location.href=window.location.href"> Volver al inicio </div>
+            </div>
+            {% else %}
+                {% for i in myList %}
+                <div class="column">
+                    <h1>Song: {{i['track']}}</h1>
+                    <p>By: {{i['artist']}}</p>
+                    <p>Album: {{i['album']}}</p>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </section>
+
+</body>
+</html>
